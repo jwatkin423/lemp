@@ -28,11 +28,11 @@ systemctl enable firewalld
 systemctl status firewalld
 
 # Set the passwords for MySQL users:
-read -p "Set root password: " ROOT_PASSWORD
-read -p "Production Password :" PR_PASSWORD
-read -p "Dev Password :" DEV_PASSWORD
-read -p "Read Only Password :" RO_PASSWORD
-read -p "QA Password :" QA_PASSWORD
+ROOT_PASSWORD=$1
+PR_PASSWORD=$2
+DEV_PASSWORD=$3
+RO_PASSWORD=$4
+QA_PASSWORD=$5
 
 # install nginx
 yum install epel-release -y
