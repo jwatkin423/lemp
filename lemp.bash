@@ -95,6 +95,7 @@ export $DEV_PASSWORD
 export $QA_PASSWORD
 export $RO_PASSWORD
 
+echo "creating My SQL users and DBs:"
 source './create-mysql-users.sh'
 
 echo "Enabling mariadb .. \n"
@@ -130,8 +131,8 @@ yum -y install yarn
 # install vim
 yum -y install vim
 
-echo "creating My SQL users and DBs:"
-source './create-dbs.sh'
+
+
 
 echo "Going down for a reboot"
 reboot
