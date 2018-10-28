@@ -28,11 +28,19 @@ systemctl enable firewalld
 systemctl status firewalld
 
 # Set the passwords for MySQL users:
-ROOT_PASSWORD=$1
-PR_PASSWORD=$2
-DEV_PASSWORD=$3
-RO_PASSWORD=$4
-QA_PASSWORD=$5
+
+while getopts a:b:c:d:e: option
+do
+case "${option}"
+in
+a) ROOT_PASSWORD=${OPTARG};;
+b) PR_PASSWORD=${OPTARG};;
+c) DEV_PASSWORD=$3=${OPTARG};;
+d) RO_PASSWORD=${OPTARG};;
+e) QA_PASSWORD=${OPTARG};;
+p) PHP7VER=${OPTARG};;
+esac
+done
 
 # install nginx
 yum install epel-release -y
@@ -41,7 +49,6 @@ systemctl start nginx
 systemctl enable nginx
 	
 # set php7 variables
-PHP7VER="php71"
 PHP7REPO="remi-${PHP7VER}"
 
 # intall mariaDB
@@ -90,8 +97,6 @@ systemctl status nginx
 # PHP version
 echo "[$PHP7REPO]: PHP installation complete!"
 php --version
-
-
 
 export $ROOT_PASSWORD
 export $PR_PASSWORD
