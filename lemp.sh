@@ -26,6 +26,13 @@ firewall-cmd --reload
 systemctl enable firewalld
 systemctl status firewalld
 
+# Set the passwords for MySQL users:
+read -p "Set root password: " ROOT_PASSWORD
+read -p "Production Password :" PR_PASSWORD
+read -p "Dev Password :" DEV_PASSWORD
+read -p "Read Only Password :" RO_PASSWORD
+read -p "QA Password :" QA_PASSWORD
+
 # install nginx
 yum install epel-release -y
 yum install nginx -y
@@ -83,12 +90,7 @@ systemctl status nginx
 echo "[$PHP7REPO]: PHP installation complete!"
 php --version
 
-# Set the passwords for MySQL users:
-read -p "Set root password: " ROOT_PASSWORD
-read -p "Production Password :" PR_PASSWORD
-read -p "Dev Password :" DEV_PASSWORD
-read -p "Read Only Password :" RO_PASSWORD
-read -p "QA Password :" QA_PASSWORD
+
 
 export $ROOT_PASSWORD
 export $PR_PASSWORD
