@@ -12,7 +12,7 @@ _EOF_
 echo "Done Root User Set up"
 
 echo "Users set up ... "
-mysql -uroot <<_EOF_
+mysql -uroot -p${ROOT_PASSWORD} <<_EOF_
 CREATE USER 'josephwatkinadmin'@'localhost' IDENTIFIED BY ${PR_PASSWORD};
 CREATE USER 'josephwatkinadmin_dev'@'localhost' IDENTIFIED BY ${DEV_PASSWORD};
 CREATE USER 'josephwatkinadmin_qa'@'localhost' IDENTIFIED BY ${QA_PASSWORD};
