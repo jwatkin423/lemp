@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install epel-release
-echo "setting up EPEL in0 yum ... "
+echo "setting up EPEL in yum ... "
 rm -rf /var/cache/yum/
 yum clean all
 yum -y update
