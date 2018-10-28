@@ -29,7 +29,7 @@ systemctl status firewalld
 
 # Set the passwords for MySQL users:
 
-while getopts a:b:c:d:e: option
+while getopts a:b:c:d:e:p: option
 do
 case "${option}"
 in
