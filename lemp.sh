@@ -98,12 +98,6 @@ systemctl status nginx
 echo "[$PHP7REPO]: PHP installation complete!"
 php --version
 
-export $ROOT_PASSWORD
-export $PR_PASSWORD
-export $DEV_PASSWORD
-export $QA_PASSWORD
-export $RO_PASSWORD
-
 echo "creating My SQL users and DBs:"
 source './create-mysql-users.sh'
 
