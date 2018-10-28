@@ -9,6 +9,7 @@ yum -y install epel-release
 
 # updates and general installs
 yum -y update
+yum -y install yum-utils
 yum -y install wget ftp gcc libpng-dev autoconf automake make g++ libtool nasm zip zlib-devel libpng-devel.x86_64 libpng12-devel.x86_64 libpng12.x86_64 htop php-gd
 
 # install gcc
