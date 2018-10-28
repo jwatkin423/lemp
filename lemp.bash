@@ -82,6 +82,21 @@ systemctl status nginx
 echo "[$PHP7REPO]: PHP installation complete!"
 php --version
 
+# Set the passwords for MySQL users:
+read -p "Set root password: " ROOT_PASSWORD
+read -p "Production Password :" PR_PASSWORD
+read -p "Dev Password :" DEV_PASSWORD
+read -p "Read Only Password :" RO_PASSWORD
+read -p "QA Password :" QA_PASSWORD
+
+export $ROOT_PASSWORD
+export $PR_PASSWORD
+export $DEV_PASSWORD
+export $QA_PASSWORD
+export $RO_PASSWORD
+
+source './create-mysql-users.sh'
+
 echo "Enabling mariadb .. \n"
 systemctl enable mariadb
 
