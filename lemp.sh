@@ -134,8 +134,5 @@ yum -y install yarn
 # install vim
 yum -y install vim
 
-
-
-
 echo "Going down for a reboot"
 reboot
